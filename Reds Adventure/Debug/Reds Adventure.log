@@ -1,0 +1,5 @@
+﻿  Apple.cpp
+C:\Users\16174\source\repos\Reds-Adventure-main\Reds-Adventure-main\Reds Adventure\Apple.cpp(6,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\16174\source\repos\Reds-Adventure-main\Reds-Adventure-main\Reds Adventure\Apple.cpp(7,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\16174\source\repos\Reds-Adventure-main\Reds-Adventure-main\Reds Adventure\Apple.cpp(17,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Reds Adventure.vcxproj -> C:\Users\16174\source\repos\Reds-Adventure-main\Reds-Adventure-main\Debug\Reds Adventure.exe
