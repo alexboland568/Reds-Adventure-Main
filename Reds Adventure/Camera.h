@@ -5,6 +5,8 @@
 
 #include <SDL/SDL.h>
 
+#include <tuple>
+
 class Camera
 {
 
@@ -15,6 +17,7 @@ public:
 	void update(bool in_scene, SDL_Rect player_rect, int window_width);
 
 	SDL_Rect get_camera_dstrect(SDL_Rect rect);
+	SDL_Rect get_camera_dstrect(SDL_Rect rect, std::tuple<int, int> bounds);
 
 	SDL_Rect get_player_rect();
 	int get_window_width();

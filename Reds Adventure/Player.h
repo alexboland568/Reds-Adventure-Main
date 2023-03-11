@@ -35,7 +35,7 @@ public:
 	void interact();
 	void jumping();
 	void animate();
-	void draw(SDL_Renderer* renderer, Camera* camera);
+	void draw(SDL_Renderer* renderer, Camera* camera, std::tuple<int, int> map_bounds);
 
 	void throw_apple(Render* render, SDL_Renderer* renderer, std::string name, std::string dir, std::tuple<double, double> window_scale);
 

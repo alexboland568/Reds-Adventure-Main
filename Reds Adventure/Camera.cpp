@@ -29,6 +29,32 @@ SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect) {
 
 }
 
+SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect, std::tuple<int, int> bounds) {
+
+	int camera_x = rect.x - player_rect.x + window_width / 2 - player_rect.w / 2;
+
+	SDL_Rect temp_rect;
+	temp_rect = { camera_x, rect.y, rect.w, rect.h };
+
+	if (!in_scene && player_rect.x + player_rect.w / 2 <= std::get<0>(bounds) + window_width / 2) {
+
+		temp_rect = rect;
+
+	}
+
+	/*if (!in_scene && player_rect.x + player_rect.w / 2 >= std::get<1>(bounds) - window_width / 2) {
+
+		temp_rect = rect; 
+
+	}*/
+
+	if (!in_scene)
+		return temp_rect;
+	else if (in_scene)
+		return rect;
+
+}
+
 SDL_Rect Camera::get_player_rect() {
 
 	return player_rect;

@@ -25,9 +25,9 @@ Player::Player(SDL_Renderer* renderer, Render* render, std::tuple<double, double
 }
 
 
-void Player::draw(SDL_Renderer* renderer, Camera* camera) {
+void Player::draw(SDL_Renderer* renderer, Camera* camera, std::tuple<int, int> map_bounds) {
 
-	SDL_Rect rect = camera->get_camera_dstrect(dstrect);
+	SDL_Rect rect = camera->get_camera_dstrect(dstrect, map_bounds);
 
 	if (face_right) {
 
@@ -40,6 +40,8 @@ void Player::draw(SDL_Renderer* renderer, Camera* camera) {
 		SDL_RenderCopyEx(renderer, texture, &srcrect, &rect, 0, NULL, SDL_FLIP_HORIZONTAL);
 
 	}
+
+	std::cout << "(" << dstrect.x << ", " << dstrect.y << ")" << std::endl; 
 
 }
 
@@ -68,6 +70,12 @@ void Player::move() {
 			dstrect.x -= sprint_vel;
 		else
 			dstrect.x -= vel_x; 
+
+	}
+
+	if (dstrect.x <= 0) {
+
+		dstrect.x = 0;
 
 	}
 

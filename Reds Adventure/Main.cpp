@@ -48,6 +48,8 @@ int main(int argc, char** argv) {
 	Uint32 frameStart;
 	int frameTime;
 
+	std::tuple<int, int> bounds = std::make_tuple(0, 800);
+
 	while (running) {
 
 		frameStart = SDL_GetTicks();
@@ -90,7 +92,7 @@ int main(int argc, char** argv) {
 		for (int i = 0; i < npcs.size(); i++)
 			npcs[i]->draw(engine->get_renderer(), camera);
 
-		player->draw(engine->get_renderer(), camera);
+		player->draw(engine->get_renderer(), camera, bounds);
 		
 		for (int i = 0; i < player->get_apples().size(); i++) {
 
