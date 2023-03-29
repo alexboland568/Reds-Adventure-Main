@@ -1,6 +1,6 @@
 #include "Input.h"
 
-void Input::update(bool& running, Render* render, SDL_Renderer* renderer, Player* player, Chatbox* chatbox, std::vector<NPC*> npcs, int& game_state, std::tuple<int, int> window_scale) {
+void Input::update(bool& running, Render* render, SDL_Renderer* renderer, Player* player, Inventory* inventory, Chatbox* chatbox, std::vector<NPC*> npcs, int& game_state, std::tuple<int, int> window_scale) {
 
 	SDL_PollEvent(&e);
 
@@ -61,7 +61,7 @@ void Input::update(bool& running, Render* render, SDL_Renderer* renderer, Player
 
 			}
 
-			if (e.key.keysym.sym == SDLK_e) {
+			if (e.key.keysym.sym == SDLK_e) { // Interact
 
 				std::vector<std::tuple<SDL_Texture*, std::string>> dialogues;
 
@@ -77,6 +77,24 @@ void Input::update(bool& running, Render* render, SDL_Renderer* renderer, Player
 						chatbox->load_text();
 
 					}
+
+				}
+
+			}
+
+			if (e.key.keysym.sym == SDLK_i) {
+
+				if (!player->get_in_inventory()) {
+
+					player->set_in_inventory(true);
+					inventory->update_inventory(true);
+
+				}
+
+				else {
+
+					player->set_in_inventory(false);
+					inventory->update_inventory(false);
 
 				}
 
@@ -141,6 +159,33 @@ void Input::update(bool& running, Render* render, SDL_Renderer* renderer, Player
 
 				player->set_sprint(false);
 				player->reset_animation();
+
+			}
+
+		}
+
+	}
+
+	if (e.type == SDL_MOUSEBUTTONDOWN) {
+
+		int mouse_x = e.motion.x;
+		int mouse_y = e.motion.y;
+
+		if (game_state == 4) {
+
+			if (e.button.button == SDL_BUTTON_LEFT) {
+
+				if (player->get_in_inventory()) {
+
+
+
+				}
+
+				else {
+
+
+
+				}
 
 			}
 

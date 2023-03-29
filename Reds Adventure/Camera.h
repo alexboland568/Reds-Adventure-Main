@@ -5,6 +5,7 @@
 
 #include <SDL/SDL.h>
 
+#include <iostream>
 #include <tuple>
 
 class Camera

@@ -67,6 +67,15 @@ public:
 
 	bool get_sleeping();
 
+	int get_health();
+	int get_max_health();
+	int get_ms();
+	int get_armor();
+	int get_attackStat();
+
+	bool get_in_inventory();
+	void set_in_inventory(bool show);
+
 	Animation* get_animation();
 
 	std::vector<std::string> get_dialogues();
@@ -101,6 +110,13 @@ private:
 	bool attack = false; 
 
 	bool sleeping = false; 
+
+	int health, max_health; 
+	int ms;
+	int armor; 
+	int attackStat;
+
+	bool in_inventory;
 
 	std::vector<std::string> dialogues; 
 

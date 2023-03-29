@@ -15,7 +15,7 @@ void Camera::update(bool in_scene, SDL_Rect player_rect, int window_width) {
 
 }
 
-SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect) {
+SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect) { // Camera for all other objects besides player 
 
 	int camera_x = rect.x - player_rect.x + window_width / 2 - player_rect.w / 2;
 
@@ -29,9 +29,9 @@ SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect) {
 
 }
 
-SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect, std::tuple<int, int> bounds) {
+SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect, std::tuple<int, int> bounds) { // Camera for player 
 
-	int camera_x = rect.x - player_rect.x + window_width / 2 - player_rect.w / 2;
+	int camera_x = window_width / 2 - player_rect.w / 2;
 
 	SDL_Rect temp_rect;
 	temp_rect = { camera_x, rect.y, rect.w, rect.h };
@@ -40,18 +40,20 @@ SDL_Rect Camera::get_camera_dstrect(SDL_Rect rect, std::tuple<int, int> bounds) 
 
 		temp_rect = rect;
 
+		
 	}
 
-	/*if (!in_scene && player_rect.x + player_rect.w / 2 >= std::get<1>(bounds) - window_width / 2) {
+	else if (!in_scene && player_rect.x + player_rect.w / 2 >= std::get<1>(bounds) - window_width / 2 + player_rect.w / 2) {
 
-		temp_rect = rect; 
+		temp_rect.x = player_rect.x % window_width;
+		//std::cout << rect.x << std::endl; 
 
-	}*/
+	}
 
 	if (!in_scene)
 		return temp_rect;
-	else if (in_scene)
-		return rect;
+	else 
+		return rect; 
 
 }
 

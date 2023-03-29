@@ -31,11 +31,29 @@
     <Filter Include="Source Files\Objects">
       <UniqueIdentifier>{1246d27f-a12f-4786-ad43-27e230d660ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Weapons">
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{77c13b09-d5e3-47ef-8ef0-bd2cad53ebde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{a5bbe588-b557-49db-8634-c518daf1a39f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Weapons">
       <UniqueIdentifier>{8f6e81f0-a224-4f14-b51e-9a216c7f65db}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Weapons">
+    <Filter Include="Source Files\Items\Weapons">
       <UniqueIdentifier>{9f52a828-f951-46bc-8a7c-e39874f72384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Armor">
+      <UniqueIdentifier>{21a16cf7-03f5-4de6-947f-fce7043c47de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Armor">
+      <UniqueIdentifier>{2f2a4b4b-46cf-42d7-891e-5141e0bde62b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Armor\Boots">
+      <UniqueIdentifier>{716c0410-be6e-468f-ab3c-a57b7bfc005e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Armor\Boots">
+      <UniqueIdentifier>{15b668bf-7ad6-4d40-b050-9cce37c15ed3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +97,13 @@
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="Apple.cpp">
-      <Filter>Source Files\Weapons</Filter>
+      <Filter>Source Files\Items\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Items.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,7 +144,16 @@
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="Apple.h">
-      <Filter>Header Files\Weapons</Filter>
+      <Filter>Header Files\Items\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Items.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Tattered_Boots.h">
+      <Filter>Header Files\Items\Armor\Boots</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

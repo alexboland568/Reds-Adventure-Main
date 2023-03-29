@@ -120,6 +120,8 @@ void Scenes::scene_1(SDL_Renderer* renderer, Chatbox* chatbox, Player* player, N
 
 			in_scene = false; 
 
+			scene_index += 1;
+
 		}
 	}
 

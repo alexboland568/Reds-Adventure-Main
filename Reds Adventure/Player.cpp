@@ -20,6 +20,14 @@ Player::Player(SDL_Renderer* renderer, Render* render, std::tuple<double, double
 	default_jump_vel = 6;
 	jump_vel = default_jump_vel;
 
+	health = 20;
+	max_health = 20;
+	ms = 0;
+	armor = 0; 
+	attackStat = 1;
+
+	in_inventory = false; 
+
 	animation = new Animation(src_w, src_h, 0, 4);
 
 }
@@ -41,7 +49,7 @@ void Player::draw(SDL_Renderer* renderer, Camera* camera, std::tuple<int, int> m
 
 	}
 
-	std::cout << "(" << dstrect.x << ", " << dstrect.y << ")" << std::endl; 
+	//std::cout << "(" << dstrect.x << ", " << dstrect.y << ")" << std::endl; 
 
 }
 
@@ -278,6 +286,48 @@ bool Player::get_sleeping() {
 bool Player::get_sprint() {
 	
 	return sprint; 
+
+}
+
+int Player::get_health() {
+
+	return health; 
+
+}
+
+int Player::get_max_health() {
+
+	return max_health; 
+
+}
+
+int Player::get_ms() {
+
+	return ms; 
+
+}
+
+int Player::get_armor() {
+
+	return armor; 
+
+}
+
+int Player::get_attackStat() {
+
+	return attackStat; 
+
+}
+
+bool Player::get_in_inventory() {
+
+	return in_inventory;
+
+}
+
+void Player::set_in_inventory(bool show) {
+
+	in_inventory = show;
 
 }
 

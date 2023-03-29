@@ -33,9 +33,9 @@ private:
 	int window_width, window_height;
 
 	int scene_index = 0; // 0 = Scene 1 
-	int scene_part = 0; // 0 = First part of scene
+	int scene_part = 0; // 0 = First part of current scene
 
-	bool in_scene = true;
+	bool in_scene = false;
 
 	int counter;
 	SDL_Color transition_color;

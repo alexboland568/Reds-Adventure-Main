@@ -15,6 +15,10 @@
 // UI
 #include "Chatbox.h"
 
+// Inventory/Items
+#include "Inventory.h"
+#include "Tattered_Boots.h"
+
 int main(int argc, char** argv) {
 
 	srand(time(NULL));
@@ -32,8 +36,12 @@ int main(int argc, char** argv) {
 		clouds.push_back(new Clouds(engine->get_width(), engine->get_height(), engine->get_scale()));
 	for (int i = 0; i < 20; i++)
 		clouds[i]->generate(render, engine->get_renderer());
+
 	Player* player = new Player(engine->get_renderer(), render, engine->get_scale());
 	Camera* camera = new Camera(player->get_dstrect(), engine->get_width());
+
+	Inventory* inventory = new Inventory(engine->get_renderer(), render, engine->get_width(), engine->get_height(), engine->get_scale());
+
 	std::vector<NPC*> npcs;
 	NPC* grandpa = new Grandpa(render, engine->get_renderer(), "Grandpa", engine->get_scale());
 	npcs.push_back(grandpa);
@@ -48,7 +56,11 @@ int main(int argc, char** argv) {
 	Uint32 frameStart;
 	int frameTime;
 
-	std::tuple<int, int> bounds = std::make_tuple(0, 800);
+	std::tuple<int, int> bounds = std::make_tuple(0, 3000);
+
+	Tattered_Boots* tattered_boots = new Tattered_Boots(engine->get_renderer(), render, "Tattered Boots", 5, 2, 2, 0, 0, 0, inventory->BOOTS, 0, 1, inventory->get_slot_rect(0, !player->get_in_inventory()));
+	inventory->set_current_slot(tattered_boots);
+	//inventory->update_inventory(player->get_in_inventory());
 
 	while (running) {
 
@@ -62,7 +74,7 @@ int main(int argc, char** argv) {
 		}
 
 		camera->update(scenes->get_in_scene(), player->get_dstrect(), engine->get_width());
-		input->update(running, render, engine->get_renderer(), player, chatbox, npcs, game_state, engine->get_scale());
+		input->update(running, render, engine->get_renderer(), player, inventory, chatbox, npcs, game_state, engine->get_scale());
 		
 		engine->set_game_state(game_state);
 
@@ -103,6 +115,8 @@ int main(int argc, char** argv) {
 
 		chatbox->draw(engine->get_renderer());
 
+		inventory->draw(engine->get_renderer(), player->get_in_inventory());
+
 		if (scenes->get_in_scene()) {
 
 			scenes->draw(engine->get_renderer());
@@ -127,6 +141,7 @@ int main(int argc, char** argv) {
 	
 	// Clean up resources 
 	delete chatbox; 
+	delete inventory;
 
 	delete grandpa;
 	delete player;
