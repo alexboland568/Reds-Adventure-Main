@@ -48,13 +48,16 @@ void Input::update(bool& running, Render* render, SDL_Renderer* renderer, Player
 
 			}
 
-			if (e.key.keysym.sym == SDLK_SPACE) {
+			if (e.key.keysym.sym == SDLK_SPACE) { // Attack
 
 				if (!player->get_attack() && !player->get_right() && !player->get_left() && !player->get_jump()) {
 
 
 					player->set_attack(true);
-					player->throw_apple(render, renderer, "red_apple", "right", window_scale);
+					if (player->get_face_right())
+						player->throw_apple(render, renderer, "red_apple", "right", window_scale);
+					else if (player->get_face_left())
+						player->throw_apple(render, renderer, "red_apple", "left", window_scale);
 					player->reset_animation();
 
 				}

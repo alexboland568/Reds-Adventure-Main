@@ -253,6 +253,18 @@ SDL_Rect Player::get_dstrect() {
 
 }
 
+bool Player::get_face_right() {
+
+	return face_right; 
+
+}
+
+bool Player::get_face_left() {
+
+	return face_left; 
+
+}
+
 bool Player::get_right() {
 
 	return right; 

@@ -10,27 +10,6 @@ Scenes::Scenes(Render* render, SDL_Renderer* renderer, int window_width, int win
 	transition_alpha = 255;
 	delay = 1000;
 	transition_texture = render->load_image("Res/Scenes/transition.png", renderer);
-	// SDL_SetRenderDrawColor(this->renderer, 100, 149, 237, 255)
-	//SDL_Texture* red_icon = render->load_image("Res/Characters/Red/icon.png", renderer);
-
-	// Scene 1 (Red and Grandpa)
-
-	/*dialogues.push_back("What did I tell you about crying?");
-	icons.push_back(red_icon);
-	dialogues.push_back("Ive raised you to not be a coward.");
-	icons.push_back(red_icon);
-	dialogues.push_back("Im sorry grandpa but I hurt myself.");
-	icons.push_back(red_icon);
-	dialogues.push_back("Do you think youll be able to find your father the way you are now?");
-	icons.push_back(red_icon);
-	dialogues.push_back("Sorry Grandpa. Ill do better.");
-	icons.push_back(red_icon);
-	dialogues.push_back("Dont apologize. Get up and lets go.");
-	icons.push_back(red_icon);
-	dialogues.push_back("The ceremony for your mythic starts soon. Dont be late. Be sure to check on your mother first.");
-	icons.push_back(red_icon);
-
-	all_dialogues.push_back(dialogues);*/
 
 }
 

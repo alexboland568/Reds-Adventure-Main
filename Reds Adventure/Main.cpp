@@ -115,7 +115,7 @@ int main(int argc, char** argv) {
 
 		chatbox->draw(engine->get_renderer());
 
-		inventory->draw(engine->get_renderer(), player->get_in_inventory());
+		//inventory->draw(engine->get_renderer(), player->get_in_inventory());
 
 		if (scenes->get_in_scene()) {
 

@@ -57,6 +57,8 @@ public:
 	int get_src_w();
 	int get_src_h();
 
+	bool get_face_right();
+	bool get_face_left();
 	bool get_right();
 	bool get_left();
 

@@ -55,6 +55,12 @@
     <Filter Include="Source Files\Items\Armor\Boots">
       <UniqueIdentifier>{15b668bf-7ad6-4d40-b050-9cce37c15ed3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Animals">
+      <UniqueIdentifier>{4fc37067-be2c-4832-89ba-e93286f1b1aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Animals">
+      <UniqueIdentifier>{8921a968-a5d8-4b1c-b54b-5da53b4433a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -105,6 +111,9 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files\Items</Filter>
     </ClCompile>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Source Files\Animals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scenes.h">
@@ -154,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="Tattered_Boots.h">
       <Filter>Header Files\Items\Armor\Boots</Filter>
+    </ClInclude>
+    <ClInclude Include="Bird.h">
+      <Filter>Header Files\Animals</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
